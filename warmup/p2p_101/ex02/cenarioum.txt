@@ -1,0 +1,4 @@
+Procuraria a pessoa pelos canais de comunicação e em caso de resposta aguardaria
+Em caso de ausência total, cancelaria a avaliação antes de sair do campus, e se 
+possível (não sei como funciona pois nunca tive que cancelar) remarcaria a
+avaliação com outro aluno.

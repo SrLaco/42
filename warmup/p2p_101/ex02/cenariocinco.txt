@@ -1,0 +1,4 @@
+Explicar a trapaça geralmente atenua as emoções do trapaceiro, e não saber
+explicar configura trapaça, a Pessoa A deveria tentar acalmar a Pessoa B e dar 
+sugestões sobre a questão perguntada, se ainda assim, a Pessoa B não soubesse
+como elaborar, infelizmente a flag deve ser aplicada.

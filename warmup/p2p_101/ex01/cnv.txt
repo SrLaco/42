@@ -1,0 +1,3 @@
+Comunicação não violenta se trata de uma estrutura de resolução para conflitos em 
+geral, buscando consenso entre os indivíduos envolvidos considerando, mas não se
+limitando, à metodologia e ideais da 42.
