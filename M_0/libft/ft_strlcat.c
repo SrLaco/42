@@ -6,19 +6,19 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 07:09:35 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/05/29 07:09:41 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/09 23:24:41 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t nb)
 {
 	int				i;
 	unsigned int	j;
 
-	i = 0;
 	j = 0;
-	while (dest[i] != '\0')
-		i++;
+	i = ft_strlen(dest);
 	while (src[j] != '\0' && j < nb)
 	{
 		dest[i] = src[j];
@@ -26,7 +26,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		i++;
 	}
 	dest[i] = '\0';
-	return (dest);
+	return (ft_strlen(dest) + 1);
 }
 
 // #include <string.h>
@@ -34,6 +34,6 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 // int	main(void)
 // {
 // 	char	dest[524288] = "Hello ";
-// 	printf("%d\n", ft_strncat(dest, "algebra", 7));
-// 	printf("%d\n", strncmp(dest, " ZEBRA", 3));
+// 	printf("%zu\n", ft_strlcat(dest, "algebra", 7));
+// 	printf("%zu\n", strlcat(dest, "algebra", 7));
 // }

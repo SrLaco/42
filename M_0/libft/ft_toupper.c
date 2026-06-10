@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/29 03:49:56 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/08 17:48:05 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/10 01:46:24 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/06/10 09:27:46 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_toupper(int c)
 {
-	if (c >= '\0' && c <= 127)
-		return (1);
-	return (0);
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%d\n", ft_isascii('H'));
-// 	printf("%d\n", ft_isascii('w'));
-// 	printf("%d\n", ft_isascii('4'));
-// 	printf("%d\n", ft_isascii('\n'));
-// 	printf("%d\n", ft_isascii('\0'));
-// }

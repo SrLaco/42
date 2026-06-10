@@ -6,31 +6,31 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 07:05:00 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/05/29 07:05:10 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/09 22:51:37 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (src[i] != '\0' && i < size)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
+	dest[i] = '\0';
+	while (src[i] != '\0')
 		i++;
-	}
-	return (dest);
+	return (i);
 }
 
-// #include <stdio.h>
 // int	main(void)
 // {
 // 	char	dest[524288] = "Hello 42";
-// 	printf ("%s", ft_strncpy(dest, "Hello World", 12));
+// 	printf("%zu", ft_strlcpy(dest, "", 0));
+// 	printf("%zu", strlcpy(dest, "", 0));
 // }

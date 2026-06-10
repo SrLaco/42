@@ -6,9 +6,11 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 07:06:28 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/05/29 07:07:12 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/09 20:42:41 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {

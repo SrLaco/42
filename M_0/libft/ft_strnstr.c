@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/29 05:05:42 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/09 20:42:42 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/10 03:18:18 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/06/10 09:25:53 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (str[i] != '\0')
+	j = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
+	while (big[i] != '\0' && big[i] != little[j])
+	{
+		if (big[i] == little[j] && j <= len)
+		{
+			if (little[j] == '\0')
+				return ((char *)&big[i]);
+		}
 		i++;
-	return (i);
+	}
+	return (NULL);
 }
 
-// #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%d", ft_strlen("Inconstitucionalissimamente"));
+// 	char	*s;
+// 	char	*c;
+
+// 	s = "teste";
+// 	c = "este";
+// 	printf("%s", ft_strnstr(s, c, 5));
+	// printf("%s", strnstr(s, c, 5));
 // }

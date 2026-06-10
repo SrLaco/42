@@ -6,11 +6,13 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 05:14:28 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/04 14:53:59 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/08 19:10:15 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_signal(int total, int is_signal)
+#include "libft.h"
+
+static int	check_signal(int total, int is_signal)
 {
 	if (is_signal == -1)
 		return (total * -1);
@@ -18,7 +20,7 @@ int	check_signal(int total, int is_signal)
 		return (total);
 	return (0);
 }
-	
+
 int	ft_atoi(char *str)
 {
 	int	i;

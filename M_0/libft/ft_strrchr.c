@@ -1,30 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/29 03:49:56 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/08 17:48:05 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/10 02:05:58 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/06/10 02:34:37 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
-{
-	if (c >= '\0' && c <= 127)
-		return (1);
-	return (0);
-}
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%d\n", ft_isascii('H'));
-// 	printf("%d\n", ft_isascii('w'));
-// 	printf("%d\n", ft_isascii('4'));
-// 	printf("%d\n", ft_isascii('\n'));
-// 	printf("%d\n", ft_isascii('\0'));
-// }
+char	*ft_strrchr(const char *s, int c);
