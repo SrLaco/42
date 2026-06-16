@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:22:28 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/10 04:51:04 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/16 20:30:33 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int		ft_strlen(char *str);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t nb);
+char	*ft_strchr(const char *s, int c);
 
 #endif

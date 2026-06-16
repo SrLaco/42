@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 03:18:18 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/10 09:25:53 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/16 20:43:50 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,19 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (little[0] == '\0')
+	big = ft_strchr(big, little[j]);
+	if (ft_strcmp(big[i], little[j], sizeof(big)))
 		return ((char *)big);
-	while (big[i] != '\0' && big[i] != little[j])
-	{
-		if (big[i] == little[j] && j <= len)
-		{
-			if (little[j] == '\0')
-				return ((char *)&big[i]);
-		}
-		i++;
-	}
 	return (NULL);
 }
 
-// int	main(void)
-// {
-// 	char	*s;
-// 	char	*c;
+int	main(void)
+{
+	char	*s;
+	char	*c;
 
-// 	s = "teste";
-// 	c = "este";
-// 	printf("%s", ft_strnstr(s, c, 5));
-	// printf("%s", strnstr(s, c, 5));
-// }
+	s = "teste";
+	c = "este";
+	printf("%s", ft_strnstr(s, c, 5));
+	printf("%s", strnstr(s, c, 5));
+}
