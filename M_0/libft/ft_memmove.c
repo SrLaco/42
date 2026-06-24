@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/10 02:05:58 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/23 15:32:35 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/17 20:22:09 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/06/23 15:06:16 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	int	i;
+	size_t				i;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	i = ft_strlen((char *)s);
-	if (c == '\0')
-		return ((char *)&s[i]);
-	while (i >= 0)
+	if (!dest && !src)
+		return (NULL);
+	i = 0;
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	if (d < s)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		ft_memcpy(d, s, size);
 	}
-	return (NULL);
+	else
+	{
+		d += (size - 1);
+		s += (size - 1);
+		while (size--)
+		{
+			*d-- = *s--;
+		}
+	}
+	return (dest);
 }
-
-// int	main(void)
-// {
-// 	char	*s;
-// 	char	c;
-
-// 	s = "teste";
-// 	c = 0;
-// 	printf("%s", ft_strrchr(s, c));
-// 	printf("%s", strrchr(s, c));
-// }

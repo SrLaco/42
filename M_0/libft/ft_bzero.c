@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/10 02:05:58 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/23 15:32:35 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/17 19:42:06 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/06/22 16:56:18 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-
-	i = ft_strlen((char *)s);
-	if (c == '\0')
-		return ((char *)&s[i]);
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
-	}
-	return (NULL);
+	ft_memset(s, '\0', n);
+	return ;
 }
-
-// int	main(void)
-// {
-// 	char	*s;
-// 	char	c;
-
-// 	s = "teste";
-// 	c = 0;
-// 	printf("%s", ft_strrchr(s, c));
-// 	printf("%s", strrchr(s, c));
-// }

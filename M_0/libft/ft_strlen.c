@@ -6,15 +6,15 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 05:05:42 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/09 20:42:42 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/22 21:19:34 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

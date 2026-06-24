@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/10 02:05:58 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/23 15:32:35 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/23 17:46:19 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/06/23 20:02:00 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	char	*dest;
+	size_t	size;
 
-	i = ft_strlen((char *)s);
-	if (c == '\0')
-		return ((char *)&s[i]);
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
-	}
-	return (NULL);
+	size = ft_strlen(s) + 1;
+	dest = malloc(size * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
+	ft_strlcpy(dest, s, size);
+	return (dest);
 }
-
-// int	main(void)
-// {
-// 	char	*s;
-// 	char	c;
-
-// 	s = "teste";
-// 	c = 0;
-// 	printf("%s", ft_strrchr(s, c));
-// 	printf("%s", strrchr(s, c));
-// }

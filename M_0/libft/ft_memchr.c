@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/10 02:05:58 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/23 15:32:35 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/17 20:25:00 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/06/22 21:32:31 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*s;
 
-	i = ft_strlen((char *)s);
-	if (c == '\0')
-		return ((char *)&s[i]);
-	while (i >= 0)
+	i = 0;
+	s = (unsigned char *)str;
+	while (s[i] != '\0' && i < n)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		if (s[i] == (unsigned char)c)
+			return ((void *)&s[i]);
+		i++;
 	}
 	return (NULL);
 }
 
-// int	main(void)
-// {
-// 	char	*s;
-// 	char	c;
-
-// 	s = "teste";
-// 	c = 0;
-// 	printf("%s", ft_strrchr(s, c));
-// 	printf("%s", strrchr(s, c));
-// }
+//i may need to receive c in a size_t variable to be able to compare in the loop

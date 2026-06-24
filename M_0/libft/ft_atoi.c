@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 05:14:28 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/08 19:10:15 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/23 19:02:28 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	is_signal = 0;
 	total = 0;
-	while (str[i] == ' ')
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-')
 	{
@@ -50,10 +50,10 @@ int	ft_atoi(char *str)
 	return (check_signal(total, is_signal));
 }
 
-// #include <stdio.h>
-// #include <stdlib.h>
 // int	main(void)
 // {
+// 	printf("%d\n", ft_atoi("+-46"));
+// 	printf("%d\n", ft_atoi("+469"));
 // 	printf("%d\n", ft_atoi("-12345"));
 // 	printf("%d\n", ft_atoi("--54321"));
 // 	printf("%d\n", ft_atoi("-2147483647"));
@@ -63,7 +63,10 @@ int	ft_atoi(char *str)
 // 	printf("%d\n", ft_atoi("+-54321"));
 // 	printf("%d\n", ft_atoi("+2147483647"));
 // 	printf("%d\n", ft_atoi("+-2147483648"));
+// 	printf("%d\n", ft_atoi("2147483648"));
 // 	printf("%d\n", ft_atoi("+0"));
+// 	printf("%d\n", atoi("+-46"));
+// 	printf("%d\n", atoi("+469"));
 // 	printf("%d\n", atoi("-12345"));
 // 	printf("%d\n", atoi("--54321"));
 // 	printf("%d\n", atoi("-2147483647"));
@@ -73,5 +76,6 @@ int	ft_atoi(char *str)
 // 	printf("%d\n", atoi("+-54321"));
 // 	printf("%d\n", atoi("+2147483647"));
 // 	printf("%d\n", atoi("+-2147483648"));
+// 	printf("%d\n", atoi("2147483648"));
 // 	printf("%d\n", atoi("+0"));
 // }
