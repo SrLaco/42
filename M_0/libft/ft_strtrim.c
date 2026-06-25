@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/17 20:25:00 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/24 15:05:37 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/24 19:26:42 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/06/24 22:54:57 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+char	*ft_strtrim(char const *s, char const *set)
 {
-	size_t			i;
-	unsigned char	*s;
+	size_t	i;
+	size_t	l;
+	size_t	size;
+	char	*str;
 
+	if (s == NULL || set == NULL)
+		return (NULL);
 	i = 0;
-	s = (unsigned char *)str;
-	while (s[i] != '\0' && i < n)
+	l = ft_strlen(s);
+	if (l == 0)
+		return (ft_strdup(""));
+	while (s[i] != '\0' && ft_strchr(set, s[i]))
+	i++;
+	while (l > i && ft_strchr(set, s[l - 1]))
+	l--;
+	size = l - i;
+	str = malloc(sizeof(char) * (size + 1));
+	if (str)
 	{
-		if (s[i] == (unsigned char)c)
-			return ((void *)&s[i]);
-		i++;
+		str = ft_memcpy(str, s + i, size);
+		str[size] = '\0';
+		return (str);
 	}
 	return (NULL);
 }
-
-//i may need to receive c in a size_t variable to be able to compare in the loop

@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 05:14:28 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/23 19:02:28 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/24 18:42:33 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	check_signal(int total, int is_signal)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	is_signal;
