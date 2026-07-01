@@ -35,6 +35,12 @@ Identifies the null character in the string passed as argument and returns the n
 #### ft_memset
 Iterates through a number of adresses in the memory, equal to the third parameter of the function, filling them with the value passed as the second parameter, beggining in the address received as the first argument.
 
+#### ft_bzero
+Iterates through a number of bytes starting at the adress of the first parameter untill the lenght, provided by the second parameter is met zeroing its bytes(replacing them by '\0').
+
+#### ft_memcpy
+Copies the content of n bytes to the adress received as the first parameter, from the adress of a string in the second parameter,
+
 ## Instruções
 
 ### Compilação
