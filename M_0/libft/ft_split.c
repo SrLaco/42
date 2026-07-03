@@ -5,74 +5,76 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 09:38:43 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/25 09:38:43 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/06/24 22:59:54 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/07/02 00:57:40 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	word_count(const char *str, char c)
+static size_t	word_count(char const *str, char c)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	j = 0;
-	while (str[i] == '\0')
+	if (str[i] != '\0' && str[i] != c)
+		j++;
+	while (str[i])
 	{
-		if((str[i] != c && str[i - 1] == c) && i > 0)
+		if (str[i] == c && str[i + 1] != c && str[i + 1] != '\0')
 			j++;
 		i++;
 	}
 	return (j);
 }
 
-static char	*set_next_line(const char **str, char c)
+static char	**free_sp(char **split, size_t j)
 {
-	char	*current_word;
-	char	*word_len;
-
-	while (**str == c)
-		(*str)++;
-	if (**str == '/0')
-		return (NULL);
-	word_len = 
-	current_word = ft_substr(*str, 0, word_len);
-	if (current_word)
+	while (j > 0)
 	{
-		while (**str != c && **str !=0)
-			(*str)++;
+		j--;
+		free(split[j]);
 	}
+	free(split);
 	return (NULL);
 }
-static void	chain_free(char **, int i)
+
+static char	**set_words(const char *str, char c, char **split, size_t w_count)
 {
-	while (i > 0)
+	size_t	i;
+	size_t	j;
+	size_t	start;
+
+	i = 0;
+	j = 0;
+	while (j < w_count && str[i])
 	{
-		i--;
-		free(split[i]);
+		while (str[i] == c)
+			i++;
+		start = i;
+		while (str[i] != c && str[i])
+			i++;
+		split[j] = ft_substr(str, start, i - start);
+		if (!split[j])
+			return (free_sp(split, j));
+		j++;
 	}
+	split[j] = NULL;
+	return (split);
 }
 
-char	**(const char *str, char c)
+char	**ft_split(char const *str, char c)
 {
 	char	**split;
 	size_t	w_count;
-	size_t	i;
 
-	w_count = word_count (str, c);
-	split = (malloc(w_count + 1) * sizeof(char *))
-	if (split == NULL)
+	if (!str)
 		return (NULL);
-	i = 0;
-	while i (i < w_count)
-	{
-		split[i] = set_next_line(&str, c);
-		if (!split[i])
-			chain_free(split, i);
-		i++;
-	}
-	split[i] = NULL;
-	return (split);
+	w_count = word_count(str, c);
+	split = malloc((w_count + 1) * sizeof(char *));
+	if (!split)
+		return (NULL);
+	return (set_words(str, c, split, w_count));
 }

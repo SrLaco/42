@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 20:25:00 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/24 15:05:37 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/07/02 01:47:27 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 
 	i = 0;
 	s = (unsigned char *)str;
-	while (s[i] != '\0' && i < n)
+	while (i < n)
 	{
 		if (s[i] == (unsigned char)c)
 			return ((void *)&s[i]);
@@ -27,5 +27,3 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (NULL);
 }
-
-//i may need to receive c in a size_t variable to be able to compare in the loop

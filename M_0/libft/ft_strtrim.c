@@ -6,13 +6,13 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 19:26:42 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/24 22:54:57 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/26 13:13:32 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s, char const *set)
+char	*ft_strtrim(const char *s, char const *set)
 {
 	size_t	i;
 	size_t	l;

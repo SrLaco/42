@@ -6,13 +6,13 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:39:02 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/06/24 19:52:15 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/06/26 13:13:54 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *dest, char const *src)
+char	*ft_strjoin(const char *dest, char const *src)
 {
 	size_t	s;
 	size_t	d;
