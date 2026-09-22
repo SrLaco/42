@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 04:05:42 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/22 04:05:42 by cade-mou         ###   ########.fr       */
+/*   Created: 2026/09/22 04:16:19 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/09/22 04:16:19 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,10 @@
 # endif
 
 char	*get_next_line(int fd);
+size_t	gnl_strlen(const char *s);
+char	*gnl_strchr(const char *s, int c);
+size_t	gnl_cpy(char *dst, const char *src);
+char	*gnl_substr(const char *s, size_t start, size_t len);
+char	*gnl_strjoin_free(char *stash, const char *buf);
 
 #endif
