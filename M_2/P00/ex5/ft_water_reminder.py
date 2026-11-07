@@ -1,4 +1,4 @@
-def ft_water_reminder():
+def ft_water_reminder() -> None:
     d = int(input("Days since last watering: "))
 
     if d <= 2:
