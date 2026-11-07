@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 14:43:26 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/20 14:43:26 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/11/07 01:55:56 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	run_all(t_ctx *ctx, char *buf)
 	{
 		if (buf[i] == '\n')
 		{
-			if(!apply_line(ctx, buf + ini, i - ini))
+			if (!apply_line(ctx, buf + ini, i - ini))
 				return (0);
 			ini = i + 1;
 		}

@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 14:44:03 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/20 14:44:03 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/11/07 01:57:21 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*grow(char *buf, int total, char *tmp, int n)
 	return (dst);
 }
 
-char *read_all(int fd)
+char	*read_all(int fd)
 {
 	char	tmp[1024];
 	char	*buf;

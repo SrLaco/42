@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 23:26:34 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/19 23:26:34 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/20 18:48:57 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_move	cand_push(t_ctx *ctx, int i)
 {
-	return (pair_best(ctx, i, target_in_b(ctx->b, ctx->a->data [i])))
+	return (pair_best(ctx, i, target_in_b(ctx->b, ctx->a->data [i])));
 }
 
 t_move	best_push(t_ctx *ctx)
@@ -22,7 +22,7 @@ t_move	best_push(t_ctx *ctx)
 	t_move	best;
 	int		size;
 	int		k;
-	
+
 	size = ctx->a->size;
 	best = cand_push(ctx, 0);
 	k = 1;
@@ -38,7 +38,7 @@ t_move	best_push(t_ctx *ctx)
 
 static t_move	cand_insert(t_ctx *ctx, int i)
 {
-	return (pair_best(ctx, target_in_b(ctx->a, ctx->b->data [i]), i))
+	return (pair_best(ctx, target_in_b(ctx->a, ctx->b->data [i]), i));
 }
 
 t_move	best_insert(t_ctx *ctx)
@@ -46,7 +46,7 @@ t_move	best_insert(t_ctx *ctx)
 	t_move	best;
 	int		size;
 	int		k;
-	
+
 	size = ctx->b->size;
 	best = cand_insert(ctx, 0);
 	k = 1;

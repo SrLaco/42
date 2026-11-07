@@ -6,13 +6,13 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 13:15:48 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/06 13:47:38 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/11/07 02:00:08 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap_top(t_stack *s)
+static void	swap_top(t_stack *stack)
 {
 	int	tmp;
 

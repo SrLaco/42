@@ -6,11 +6,11 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 01:52:54 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/19 04:31:46 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/19 16:04:54 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.higher"
+#include "push_swap.h"
 
 static int	count_in_range(t_stack *stack, int lower, int higher)
 {
@@ -31,8 +31,8 @@ static int	count_in_range(t_stack *stack, int lower, int higher)
 static void	collect_chunk(t_ctx *ctx, int lower, int higher)
 {
 	int	rest;
-	
-	rest = count_in_range(ctx->a, lower, higher)
+
+	rest = count_in_range(ctx->a, lower, higher);
 	while (rest > 0)
 	{
 		if (ctx->a->data[0] >= lower && ctx->a->data[0] <= higher)
@@ -41,7 +41,7 @@ static void	collect_chunk(t_ctx *ctx, int lower, int higher)
 			rest--;
 		}
 		else
-			op_ra;
+			op_ra(ctx);
 	}
 	return ;
 }
@@ -67,11 +67,11 @@ static void	collect_all(t_ctx *ctx, int n, int k, int width)
 
 static void	drain_b(t_ctx *ctx)
 {
-	int i;
+	int	i;
 
 	while (ctx->b->size > 0)
 	{
-		i = stack_max_index(ctx-b);
+		i = stack_max_index(ctx->b);
 		rotate_b_to_top(ctx, i);
 		op_pa(ctx);
 	}
@@ -99,5 +99,5 @@ void	sort_medium(t_ctx *ctx, t_conf *conf)
 		k = 2;
 	width = (n + k - 1) / k;
 	collect_all(ctx, n, k, width);
-	drain_b(ctx)
+	drain_b(ctx);
 }

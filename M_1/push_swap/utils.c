@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 04:41:39 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/07 07:45:08 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/19 16:08:49 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	isqrt(int n)
 	int	i;
 
 	i = 1;
-	while((i + 1) * (i + 1) <= n)
+	while ((i + 1) * (i + 1) <= n)
 		i++;
 	return (i);
 }
@@ -29,7 +29,7 @@ void	rotate_a_to_top(t_ctx *ctx, int i)
 	size = ctx->a->size;
 	if (i <= size / 2)
 	{
-		while(i-- > 0)
+		while (i-- > 0)
 			op_ra(ctx);
 	}
 	else
@@ -46,7 +46,7 @@ void	rotate_b_to_top(t_ctx *ctx, int i)
 	size = ctx->b->size;
 	if (i <= size / 2)
 	{
-		while(i-- > 0)
+		while (i-- > 0)
 			op_rb(ctx);
 	}
 	else
@@ -68,15 +68,15 @@ void	zero_counts(int *counts)
 	}
 }
 
-void	ps_die(t_ctx *c)
+void	ps_die(t_ctx *ctx)
 {
 	ft_putendl_fd("Error", 2);
-	while (c != NULL)
+	while (ctx != NULL)
 	{
-		stack_free(c->a);
-		stack_free(c->b);
-		prog_free(c->prog);
-		c = c->up;
+		stack_free(ctx->a);
+		stack_free(ctx->b);
+		prog_free(ctx->prog);
+		ctx = ctx->up;
 	}
 	exit(1);
 }

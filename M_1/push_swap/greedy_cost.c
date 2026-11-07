@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 23:26:30 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/19 23:26:30 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/20 18:47:54 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ t_move	pair_best(t_ctx *ctx, int ia, int ib)
 {
 	t_move	m;
 	t_move	best;
-	
+
 	m.a = ia;
 	m.b = ib;
+	best = m;
 	m.b = ib - ctx->b->size;
 	best = move_better(ctx, best, m);
 	m.a = ia - ctx->a->size;
@@ -67,7 +68,7 @@ int	target_in_b(t_stack *b, int value)
 	int	i;
 	int	max;
 	int	succ;
-	
+
 	i = 0;
 	max = 0;
 	succ = -1;
@@ -90,7 +91,7 @@ int	target_in_a(t_stack *a, int value)
 	int	i;
 	int	min;
 	int	succ;
-	
+
 	i = 0;
 	min = 0;
 	succ = -1;

@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 23:35:36 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/16 00:10:54 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/19 15:42:43 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ double	compute_disorder(t_stack *a)
 	long	pairs;
 	int		i;
 	int		j;
-	
+
 	mistakes = 0;
 	pairs = 0;
 	i = 0;
 	while (i < a->size)
 	{
 		j = i + 1;
-		while(j < a->size)
+		while (j < a->size)
 		{
 			pairs++;
 			if (a->data[i] > a->data[j])

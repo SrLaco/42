@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 13:38:54 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/20 13:38:54 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/20 18:44:45 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static t_stack	*stack_dup(t_stack *src)
 {
 	t_stack	*copy;
 
-	copy = stack_new(src->cap)
+	copy = stack_new(src->cap);
 	if (copy == NULL)
 		return (NULL);
-	ft_memcpy(copy->dta, src->data, sizeof(int) * src->size);
+	ft_memcpy(copy->data, src->data, sizeof(int) * src->size);
 	copy->size = src->size;
 	return (copy);
 }
@@ -39,12 +39,12 @@ static t_prog	*simulate(t_ctx *c, t_conf *conf, t_sortfn fn)
 	fn(&sim, conf);
 	stack_free(sim.a);
 	stack_free(sim.b);
-	return (sim.prog);	
+	return (sim.prog);
 }
 
 static void	take_if_shorter(t_ctx *ctx, t_prog *cand)
 {
-	if(cand->len < ctx->prog->len)
+	if (cand->len < ctx->prog->len)
 	{
 		prog_free(ctx->prog);
 		ctx->prog = cand;

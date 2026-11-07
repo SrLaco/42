@@ -1,0 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/29 05:14:28 by cade-mou          #+#    #+#             */
+/*   Updated: 2026/07/02 02:31:56 by cade-mou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static int	check_signal(int total, int is_signal)
+{
+	if (is_signal == -1)
+		return (total * -1);
+	else if (is_signal == 1 || is_signal == 0)
+		return (total);
+	return (0);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	is_signal;
+	int	total;
+
+	i = 0;
+	is_signal = 0;
+	total = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
+	{
+		is_signal--;
+		i++;
+	}
+	else if (str[i] == '+')
+	{
+		is_signal++;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		total = (str[i] - '0') + (total * 10);
+		i++;
+	}
+	return (check_signal(total, is_signal));
+}

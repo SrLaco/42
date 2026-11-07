@@ -6,13 +6,13 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 14:44:28 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/20 14:44:28 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/11/07 02:02:49 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	same(char *s, int len, char *lit)
+static int	same(const char *s, int len, char *lit)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ int	apply_rot(t_ctx *ctx, const char *s, int len)
 		op_rrr(ctx);
 	else
 		return (0);
-	return (1);	
+	return (1);
 }
 
 int	apply_line(t_ctx *ctx, const char *s, int len)
@@ -60,6 +60,6 @@ int	apply_line(t_ctx *ctx, const char *s, int len)
 	else if (same(s, len, "pb"))
 		op_pb(ctx);
 	else
-		return (apply_rot(c, s, len));
+		return (apply_rot(ctx, s, len));
 	return (1);
 }

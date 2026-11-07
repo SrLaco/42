@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 14:33:26 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/06 14:48:50 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/19 16:00:35 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ void	sort_tiny(t_ctx *ctx)
 	if (ctx->a->size == 2)
 	{
 		if (ctx->a->data[0] > ctx->a->data[1])
-			op_sa(t_ctx *ctx);
+			op_sa(ctx);
 		return ;
 	}
-	sort_three(int *ctx);
+	sort_three(ctx);
 	return ;
 }

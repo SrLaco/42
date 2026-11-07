@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 01:27:38 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/16 03:26:18 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/19 15:53:12 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	rank_of(int *copy, int size, int curr)
 	int	lower;
 	int	higher;
 	int	mid;
-	
+
 	lower = 0;
 	higher = size -1;
 	while (lower < higher)
@@ -53,27 +53,27 @@ static int	rank_of(int *copy, int size, int curr)
 	return (lower);
 }
 
-int	build_ranks(t_stack *stack)
+int	build_ranks(t_stack *a)
 {
 	int	*copy;
 	int	i;
 
-	if (stack->size <= 0)
+	if (a->size <= 0)
 		return (1);
-	copy = malloc(sizeof(int) * stack->size);
-	if(!copy)
+	copy = malloc(sizeof(int) * a->size);
+	if (!copy)
 		return (0);
 	i = 0;
-	while (i < stack->size)
+	while (i < a->size)
 	{
-		copy[i] = stack->data[i];
+		copy[i] = a->data[i];
 		i++;
 	}
-	insert_sort(copy, stack->size);
+	insert_sort(copy, a->size);
 	i = 0;
-	while (i < stack->size)
+	while (i < a->size)
 	{
-		stack->data[i] = rank_of(copy, stack->size, stack->data[i]);
+		a->data[i] = rank_of(copy, a->size, a->data[i]);
 		i++;
 	}
 	free(copy);

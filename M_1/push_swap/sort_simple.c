@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 14:48:59 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/15 03:25:52 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/19 16:07:21 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	sort_simple(t_ctx *ctx, t_conf *conf)
 	conf->cclass = "O(n²)";
 	if (ctx->a->size <= 3)
 	{
-		sort_tiny(t_ctx *ctx)
+		sort_tiny(ctx);
 		return ;
 	}
 	if (stack_is_sorted(ctx->a))

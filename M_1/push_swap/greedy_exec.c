@@ -6,7 +6,7 @@
 /*   By: cade-mou <cade-mou@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 23:26:36 by cade-mou          #+#    #+#             */
-/*   Updated: 2026/09/19 23:26:36 by cade-mou         ###   ########.fr       */
+/*   Updated: 2026/09/20 18:49:31 by cade-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ void	exec_move(t_ctx *ctx, t_move m)
 void	sort_greedy(t_ctx *ctx, t_conf *conf)
 {
 	ctx->bias = 0;
-	sort_greedy_run(ctx, conf)
+	sort_greedy_run(ctx, conf);
 }
 
 void	sort_greedy_alt(t_ctx *ctx, t_conf *conf)
 {
 	ctx->bias = 1;
-	sort_greedy_run(ctx, conf)
+	sort_greedy_run(ctx, conf);
 }
